@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marlene Geburtstagsreise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="slideshow-shell">
+    <header class="slideshow-header">
+      <p class="eyebrow">Geburtstagsreise</p>
+      <div class="title-row">
+        <h1>Marlene_Geb_2026</h1>
+        <p class="slide-counter" id="slideCounter" aria-live="polite"></p>
+      </div>
+    </header>
+
+    <section class="stage-card" aria-label="Bilder-Diashow">
+      <button class="nav-button nav-button-left" id="prevButton" type="button" aria-label="Vorheriges Bild">
+        &#10094;
+      </button>
+
+      <div class="slide-stage" id="slideStage"></div>
+
+      <button class="nav-button nav-button-right" id="nextButton" type="button" aria-label="Naechstes Bild">
+        &#10095;
+      </button>
+    </section>
+
+    <footer class="slideshow-footer">
+      <p>Mit den Pfeiltasten links und rechts kannst du ebenfalls durch die Bilder blaettern.</p>
+      <div class="dot-track" id="dotTrack" aria-label="Seitenuebersicht"></div>
+    </footer>
+  </main>
+
+  <template id="singleImageTemplate">
+    <article class="slide single-slide">
+      <figure class="hero-figure">
+        <img class="hero-image" alt="">
+      </figure>
+    </article>
+  </template>
+
+  <template id="treehouseTemplate">
+    <article class="slide collage-slide">
+      <div class="collage-layout">
+        <figure class="collage-item collage-top">
+          <img alt="Baumhausbild 1">
+        </figure>
+        <div class="collage-row">
+          <figure class="collage-item">
+            <img alt="Baumhausbild 2">
+          </figure>
+          <figure class="collage-item">
+            <img alt="Baumhausbild 3">
+          </figure>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
