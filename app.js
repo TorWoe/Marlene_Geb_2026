@@ -55,6 +55,10 @@ const slides = [
       "Grafics/Baumhausbild%202.jpeg",
       "Grafics/Baumhausbild%203.jpeg"
     ]
+  },
+  {
+    type: "message",
+    label: "Schlussseite"
   }
 ];
 
@@ -65,6 +69,7 @@ const prevButton = document.getElementById("prevButton");
 const nextButton = document.getElementById("nextButton");
 const singleTemplate = document.getElementById("singleImageTemplate");
 const treehouseTemplate = document.getElementById("treehouseTemplate");
+const messageTemplate = document.getElementById("messageTemplate");
 
 let currentSlideIndex = 0;
 
@@ -92,12 +97,14 @@ function renderSlide() {
     const image = slideElement.querySelector(".hero-image");
     image.src = slide.src;
     image.alt = slide.alt;
-  } else {
+  } else if (slide.type === "collage") {
     slideElement = treehouseTemplate.content.firstElementChild.cloneNode(true);
     const images = slideElement.querySelectorAll("img");
     slide.images.forEach((src, index) => {
       images[index].src = src;
     });
+  } else {
+    slideElement = messageTemplate.content.firstElementChild.cloneNode(true);
   }
 
   slideStage.replaceChildren(slideElement);
